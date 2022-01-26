@@ -399,6 +399,15 @@ nav a:hover {
     padding-top: 45px;
     padding-bottom: 50px;
 }
+.company{
+  display: block;
+  margin:auto;
+}
+.company img{
+  display: block;
+  margin:auto;
+}
+
 
 .company p,
 .links_nav p,
@@ -412,6 +421,7 @@ nav a:hover {
     color: #FFFFFF;
     padding-left: 35px;
     padding-right: 35px;
+    text-align: center;
 
 }
 
