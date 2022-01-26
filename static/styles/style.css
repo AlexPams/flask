@@ -399,14 +399,6 @@ nav a:hover {
     padding-top: 45px;
     padding-bottom: 50px;
 }
-.company{
-  display: block;
-  margin:auto;
-}
-.company img{
-  display: block;
-  margin:auto;
-}
 
 
 .company p,
@@ -421,12 +413,10 @@ nav a:hover {
     color: #FFFFFF;
     padding-left: 35px;
     padding-right: 35px;
-    text-align: center;
 
 }
 
 .company img {
-    padding-left: 35px;
     padding-right: 35px;
 }
 
@@ -523,7 +513,9 @@ footer p {
         margin: auto;
         margin-right: 1em;
     }
-
+    .service_wrapper{
+      display:block;
+    }
     .service {
         display: flex;
         flex-direction: column;
@@ -569,6 +561,18 @@ footer p {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+    }
+
+    .company{
+      display: block;
+      margin:auto;
+    }
+    .company img{
+      display: block;
+      margin:auto;
+    }
+    .company p{
+      text-align: center;
     }
 
     .singup {
