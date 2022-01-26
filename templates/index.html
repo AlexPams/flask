@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href={{ url_for( 'static', filename='styles/style.css' )}}>
+	<title>Alex-Pam</title>
+</head>
+<body>
+	<div class="hero" id="home">
+		<div class="logo">
+			<img src={{ url_for('static', filename = '/img/projeco-logo-black.svg')}} alt="logo">
+        </div>
+        <div class="content">
+            <h1>PARTNER WITH KONSTUCT</h1>
+            <p>An award-winning construction management firm</p>
+            <a href="#about">SCROLL DOWN</a>
+        </div>
+    </div>
+    <header>
+        <div class="logo_header">
+            <img src={{ url_for('static', filename = '/img/projeco-logo-black.svg')}} alt="logo"> 
+        </div>
+        <nav>
+          {% block menu %}
+            {% for item in navbar %}
+              <a href="{{url_for('index', _anchor = item ) }}">{{item.upper()}}</a>
+            {% endfor %}
+          {% endblock menu %}
+        </nav>
+    </header>
+    <div class="ourstory" id="about">
+        <h2>OUR STORY</h2>
+        <hr>
+        <div class="ourstory_content">
+            <div class="text">
+                <article>
+                    Founded in 2011 by John Mathew <br>
+                    Smith, <span>Konstruct</span> has become the <br>
+                    number one construction management<br>
+                    firm
+                </article>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed<br>
+                    diam nonummy nibh euismod tincidunt ut laoreet dolore magna<br>
+                    aliquam erat. Lorem ipsum dolor sit amet, consectetuer<br>
+                    adipiscing elit, sed diam nonummy nibh euismod tincidunt ut<br>
+                    laoreet dolore magna aliquam erat.
+                </p>
+            </div>
+            <div class="img">
+                <img src={{ url_for('static', filename = '/img/plan.png')}} alt="we plan" height="200">
+                <img src={{ url_for('static', filename = '/img/manage.png')}} alt="we manage" height="200">
+                <img src={{ url_for('static', filename = '/img/deliver.png')}} alt="we build" height="200">
+            </div>
+        </div>
+    </div>
+    <div class="service" id="services">
+        <div class="header_and_line">
+            <h3>OUR CAPADILITIES</h3>
+            <hr>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+            sed diam <br>
+            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
+        <button>ALL SERVICES</button>
+    </div>
+    <div class="ourworks" id="work">
+        <div class="box">
+            <img src={{ url_for('static', filename = '/img/Bitmap.svg')}} alt="img">
+            <h4 class="work_name">PROJECT AND CONSTRUCT <br>
+                MANAGEMENT</h4>
+            <p class="work_direction">Lorem ipsum dolor sit amet,<br>
+                consectetuer adipiscing elit, sed diam<br>
+                nonummy nibh euismod tincidunt ut<br>
+                laoreet dolore magna aliquam erat.</p>
+        </div>
+        <div class="box">
+            <img src={{ url_for('static', filename = '/img/Bitmap (1).svg')}} alt="img">
+            <h4 class="work_name">STRUCTURE AUDIT AND <br>
+                MAINTENANCE</h4>
+            <p class="work_direction">Lorem ipsum dolor sit amet,<br>
+                consectetuer adipiscing elit, sed diam<br>
+                nonummy nibh euismod tincidunt ut<br>
+                laoreet dolore magna aliquam erat.</p>
+        </div>
+        <div class="box">
+            <img src={{ url_for('static', filename = '/img/Bitmap (2).svg')}} alt="img">
+            <h4 class="work_name">FACTORY CONSTRUCTION <br>
+                AND MODELING</h4>
+            <p class="work_direction">Lorem ipsum dolor sit amet,<br>
+                consectetuer adipiscing elit, sed diam<br>
+                nonummy nibh euismod tincidunt ut<br>
+                laoreet dolore magna aliquam erat.</p>
+        </div>
+    </div>
+    <div class="get_in_touch" id="contact">
+        <h2>Want to build<br>
+            something amazing?</h2>
+        <button id="button"><a href = "{{url_for('get_in_touch')}}">GET IN TOUCH</a></button>
+    </div>
+    <div class="email_form">
+        <h3>Newsletter Signup</h3>
+        <form class="singup">
+            <div class="email">
+                <input type="email" class="email_input" placeholder="test@youremail.com">
+                <input type="submit" value="SIGNUP" class="signup_button">
+            </div>
+        </form>
+    </div>
+    <div class="links">
+        <div class="company">
+            <p>COMPANY</p>
+            <img src={{ url_for('static', filename = '/img/projeco-logo.svg')}} alt="logo">
+            <p>Lorem ipsum dolor sit amet, consectetuer<br>
+                adipiscing elit, sed diam nonummy nibh<br>
+                euismod tincidunt ut laoreet dolore<br>
+                magna aliquam erat.</p>
+        </div>
+        <div class="links_nav">
+            <p>LINKS</p>
+            <div class="links_wrap">
+                {% for item in navbar %}
+                  <a href="{{url_for('index', _anchor = item ) }}">{{item.upper()}}</a>
+                {% endfor %}   
+            </div>
+        </div>
+        <div class="another_links">
+          {% for item in links_one %}
+            <a href = "{{url_for('links', link = item)}}">{{item.upper()}}</a>
+          {% endfor %}
+        </div>
+        <div class="another_links">
+          {%for item in links_two %}
+            <a href="{{url_for('links', link = item )}}">{{item.upper()}}</a>
+          {% endfor %}
+        </div>
+        <div class="our_contact">
+            <p>CONTACT US</p>
+            <p>213 Baker Street <br>
+                Oriel City Kounty <br>
+                7000 KNW, <br>
+                Kountry Name <br>
+                <br>
+                +23 994 233 4022 <br>
+                <br>
+                info@konstruct.com</p>
+        </div>
+        <div class="media_logo">
+            <a href="facebook.com"><img src={{ url_for('static', filename = '/img/facebook logo.svg')}} alt="facebook"></a>
+            <a href="twitter.com"><img src={{ url_for('static', filename = '/img/twitter logo.svg')}} alt="twitter"></a>
+            <a href="google.com"><img src={{ url_for('static', filename = '/img/google logo.svg')}} alt="google"></a>
+        </div>
+    </div>
+    <footer>
+        <p>
+            © 2017 Konstruct Inc. Designed by Jane Kathryn Teo
+        </p>
+    </footer>
+</body>
+
+</html>
