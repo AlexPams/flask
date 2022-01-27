@@ -29,6 +29,14 @@ def facebook():
 @app.route('/get-in-touch')
 def get_in_touch():
   return render_template('get_in_touch.html', 
+  navbar = navbar,
+  links_one = links_one, 
+  links_two = links_two)
+
+@app.route('/sing')
+def sing_up():
+  return render_template('singup.html',
+  navbar = navbar,
   links_one = links_one, 
   links_two = links_two)
 
@@ -38,8 +46,7 @@ def links(link):
   if link in checklist:
     return 'it is work'
   else:
-    abort(404)
-    return 404
+    return render_template('404.html'), 404
 
 app.run(debug = True, host='0.0.0.0', port=8080)
 
