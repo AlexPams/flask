@@ -28,7 +28,9 @@ def facebook():
 
 @app.route('/get-in-touch')
 def get_in_touch():
-  return 'hi'
+  return render_template('get_in_touch.html', 
+  links_one = links_one, 
+  links_two = links_two)
 
 @app.route('/<link>')
 def links(link):
