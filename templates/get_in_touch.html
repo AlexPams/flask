@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>LogIn</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="stylesheet" href={{ url_for( 'static', filename='styles/footer.css' )}}>
+      <link rel="stylesheet" href={{ url_for( 'static', filename='styles/get_in_touch.css' )}}>
+  </head>
+  <body>
+    <div class="content">
+		<div class="logo">
+			<a href="{{url_for('index')}}"><img src={{ url_for('static', filename = '/img/projeco-logo-black.svg')}} alt="logo"></a>
+        </div>
+    <div class="limiter">
+      <div class="container_login">
+        <div class="wrap_login">
+          <form class="login_form validate_form" action="/get_in_touch" method="post">
+            <span class="login_form_title"> Get in touch </span>
+            <div
+              class="wrap_input validate-input"
+              data-validate="Valid email is required: ex@abc.xyz"
+            >
+              <input
+                class="input"
+                type="text"
+                name="username"
+                placeholder="Name"
+                required
+              />
+            </div>
+            <div
+              class="wrap_input rs1 validate-input"
+              data-validate="Password is required"
+            >
+              <textarea
+                class="input"
+                type="text"
+                name="message"
+                placeholder="Message"
+                required
+              ></textarea>
+            </div>
+            <div class="container_login_form_btn">
+              <input type="submit" value="Submit" class="login_form_btn"/>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+    {% extends 'footer.html' %}
+  </body>
+</html>

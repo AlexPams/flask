@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SignUp</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+     <link rel="stylesheet" href={{ url_for( 'static', filename='styles/footer.css' )}}>
+     <link rel="stylesheet" href={{ url_for( 'static', filename='styles/blog_form.css' )}}>
+  </head>
+  <body>
+       <div class="content">
+		<div class="logo">
+			<a href="{{url_for('index')}}"> <img src={{ url_for('static', filename = '/img/projeco-logo-black.svg')}} alt="logo"> </a>
+        </div>
+    <div class="limiter">
+      <div class="container_login">
+        <div class="wrap_login">
+          <form class="login_form validate_form" action="singup" method="post">
+            <span class="login_form_title"> Create an account </span>
+            <div
+              class="wrap_input validate-input"
+              data-validate="Valid email is required: ex@abc.xyz"
+            >
+              <input
+                data = "email"
+                class="input"
+                type="text"
+                name="email"
+                placeholder="Email"
+                required
+              />
+              <span class="focus_input_1"></span>
+              <span class="focus_input_2"></span>
+            </div>
+            <div
+              class="wrap_input rs1 validate-input"
+              data-validate="Password is required"
+            >
+              <input
+                data ="password"
+                class="input"
+                type="password"
+                name="pass"
+                placeholder="Password"
+                required
+              />
+                <input
+                data ="password"
+                class="input"
+                type="password"
+                name="passconfirm"
+                placeholder="Confirm the Password"
+                required
+              />
+              <span class="focus_input_1"></span>
+              <span class="focus_input_2"></span>
+            </div>
+            <div class="container_login_form_btn">
+              <input type="submit" value="Sign up" class="login_form_btn"/>
+            </div>
+            <div class="text_center">
+            <span class="txt1"> Have an account? </span>
+              <a href="{{url_for('log_in')}}" class="txt2 ">Log in</a>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+       </div>
+    {% extends 'footer.html' %}
+  </body>
+</html>
